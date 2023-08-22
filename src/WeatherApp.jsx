@@ -10,9 +10,7 @@ const WeatherApp = () => {
         try {
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=0313c4bad55ea5b8dc9624efda585f47`)
             const data = await response.json();
-            console.log(data)
             if (data.cod == 200) {
-                console.log("entre")
                 setDataClima(data)
             } else {
                 alert('No se pudo obtener la información')
@@ -21,7 +19,6 @@ const WeatherApp = () => {
         } catch (error) {
             console.error('Ocurrió el error: ', error)
         }
-
     }
 
     const handleCambioCiudad = (ev) => {
@@ -61,13 +58,11 @@ const WeatherApp = () => {
 
                         </div>
                         <div>
-                        <img src={`https://openweathermap.org/img/wn/${dataClima.weather[0].icon}@2x.png`} />
-
+                            <img src={`https://openweathermap.org/img/wn/${dataClima.weather[0].icon}@2x.png`} />
                         </div>
                     </div>
                     : <p>Ingrese una Ciudad para comprobar el Clima</p>
             }
-
         </div>
     )
 }

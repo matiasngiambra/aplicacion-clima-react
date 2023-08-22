@@ -4,7 +4,7 @@ import './index.css'
 import WeatherApp from './WeatherApp'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  //<React.StrictMode>
+  <React.StrictMode>
     <WeatherApp></WeatherApp>
-  //</React.StrictMode>,
+  </React.StrictMode>,
 )
